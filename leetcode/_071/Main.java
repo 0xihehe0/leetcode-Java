@@ -26,9 +26,7 @@ class Solution {
 
         // Print the stack
         System.out.println(stack);
-        for (int i = 0; i < stack; i++) {
 
-        }
         return "123";
     }
 }
