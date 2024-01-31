@@ -5,9 +5,13 @@
       <module fileurl="file://$PROJECT_DIR$/leetcode/_001/_001.iml" filepath="$PROJECT_DIR$/leetcode/_001/_001.iml" />
       <module fileurl="file://$PROJECT_DIR$/leetcode/_002/_002.iml" filepath="$PROJECT_DIR$/leetcode/_002/_002.iml" />
       <module fileurl="file://$PROJECT_DIR$/leetcode/_009/_009.iml" filepath="$PROJECT_DIR$/leetcode/_009/_009.iml" />
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/leetcode/_014/_014.iml" filepath="$PROJECT_DIR$/leetcode/_014/_014.iml" />
       <module fileurl="file://$PROJECT_DIR$/leetcode/_027/_027.iml" filepath="$PROJECT_DIR$/leetcode/_027/_027.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/leetcode-Java.iml" filepath="$PROJECT_DIR$/.idea/leetcode-Java.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/leetcode-java.iml" filepath="$PROJECT_DIR$/.idea/leetcode-java.iml" />
+>>>>>>> a0ddccb97f3a30679198804f618b87e0cab86464
     </modules>
   </component>
 </project>
