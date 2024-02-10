@@ -1,5 +1,3 @@
-import java.util.LinkedList;
-
 public class Main {
     public static void main(String[] args) {
         Solution solution = new Solution();
@@ -15,18 +13,18 @@ public class Main {
         n3.next = n4;
         n4.next = n5;
         n5.next = null;
-        System.out.println(solution.middleNode(n0.next));
+        System.out.println(solution.getIntersectionNode(n0,n3));
     }
 }
 
 class Solution {
-    public ListNode middleNode(ListNode head) {
-        ListNode fastIndex = head;
-        ListNode slowIndex = head;
-        while (fastIndex.next != null && fastIndex != null){
-            fastIndex = fastIndex.next.next;
-            slowIndex = slowIndex.next;
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        ListNode a = headA;
+        ListNode b = headB;
+        while(a != b){
+            a = a != null ? b : a.next;
+            b = b != null ? a : b.next;
         }
-        return slowIndex;
+        return a;
     }
 }
