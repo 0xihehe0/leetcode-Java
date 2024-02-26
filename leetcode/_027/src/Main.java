@@ -4,25 +4,26 @@ import javax.swing.JOptionPane;
 
 public class Main {
     public static void main(String[] args) {
-        String[] strArray = {"dag", "dacecar", "dar"};
-//        Solution so = new Solution();
-//        so.longestCommonPrefix(strArray);
-//        System.out.println(so.longestCommonPrefix(strArray));
+        int [] nums = {1,2,2,5,65,7};
+        int val = 2;
+        Solution so = new Solution();
+
+        System.out.println(so.removeElement(nums,val));
         }
 }
 
 class Solution {
-    public String longestCommonPrefix(String[] v) {
-        StringBuilder ans = new StringBuilder();
-//        Arrays.sort(v);
-        String first = v[0];
-        String last = v[v.length-1];
-        for (int i=0; i<Math.min(first.length(), last.length()); i++) {
-            if (first.charAt(i) != last.charAt(i)) {
-                return ans.toString();
+    public int removeElement(int[] nums, int val) {
+        int left = 0;
+        int right = nums.length;
+        while(left < right){
+            if(nums[left] == val){
+                nums[left] = nums[right - 1];
+                right --;
+            }else{
+                left ++;
             }
-            ans.append(first.charAt(i));
         }
-        return ans.toString();
+        return left;
     }
 }
