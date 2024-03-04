@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        int[] list = {2, 3, 7};
+        int[] list = {2, 2, 3, 7};
         int target = 7;
         Solution so = new Solution();
         System.out.println(so.combinationSum(list, target));
@@ -30,6 +30,9 @@ class Solution {
         for (int i = start; i < choices.length; i++) {
             int value = choices[i];
             if (target - value < 0) {
+                break;
+            }
+            if(i > start && value == choices[i + 1]){
                 continue;
             }
             state.add(value);
