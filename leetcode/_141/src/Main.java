@@ -33,8 +33,19 @@ public class Main {
 
 
 class Solution {
-    Map list = new HashMap<>();
-    public boolean hasCycle(ListNode head) {
-        return false;
+    public boolean hasCycle(ListNode head){
+        if(head == null || head.next == null){
+            return false;
+        }
+        ListNode fast = head;
+        ListNode slow = head.next;
+        while(slow != fast){
+            if(slow == null || fast.next == null){
+                return false;
+            }
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return true;
     }
 }
