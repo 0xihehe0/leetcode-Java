@@ -43,22 +43,28 @@ public class Main {
 }
 
 class Solution {
-    static List list = new ArrayList<>();
-    static int [] nums = null;
     public TreeNode sortedListToBST(ListNode head) {
-        ListNode fast = head;
-        ListNode slow = head;
-        while (fast)
-        TreeNode node = new TreeNode(0);
-        return node;
+           return checkTree(head,null);
     }
 
-    static TreeNode checkTree(int left, int right){
-        if(left > right) return null;
-        int mid = left + (right - left) / 2;
-        TreeNode node = new TreeNode((Integer) list.get(mid));
-        node.left = checkTree(left, mid - 1);
-        node.right = checkTree(mid + 1, right);
-        return node;
+    public TreeNode checkTree(ListNode left, ListNode right){
+        if(left == right){
+            return null;
+        }
+        ListNode mid = checkMidNode(left,right);
+        TreeNode res = new TreeNode(mid.val);
+        res.left = checkTree(left,mid);
+        res.right = checkTree(mid.next,right);
+        return res;
+    }
+
+    public ListNode checkMidNode(ListNode left, ListNode right) {
+        ListNode fast = left;
+        ListNode slow = left;
+        while (fast != right && fast.next != right) {
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+        return slow;
     }
 }
